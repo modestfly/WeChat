@@ -1,22 +1,21 @@
 //
-//  WCBaseViewController.m
+//  WCFrogetPasswordViewController.m
 //  WeChat
 //
 //  Created by test on 2018/8/17.
 //  Copyright © 2018年 SkyFly. All rights reserved.
 //
 
-#import "WCBaseViewController.h"
+#import "WCFrogetPasswordViewController.h"
 
-@interface WCBaseViewController ()
+@interface WCFrogetPasswordViewController ()
 
 @end
 
-@implementation WCBaseViewController
+@implementation WCFrogetPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = [UIColor  whiteColor];
     // Do any additional setup after loading the view.
 }
 

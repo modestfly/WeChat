@@ -44,7 +44,7 @@
 #pragma mark 设置外观及控制器的字体
 - (void)setupWCappearence {
     //设置导航栏字体颜色与大小
-    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor],
                                                          NSFontAttributeName : [UIFont boldSystemFontOfSize:18]};
 }
 

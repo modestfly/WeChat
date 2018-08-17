@@ -1,22 +1,21 @@
 //
-//  WCBaseViewController.m
+//  WCQuestionViewController.m
 //  WeChat
 //
 //  Created by test on 2018/8/17.
 //  Copyright © 2018年 SkyFly. All rights reserved.
 //
 
-#import "WCBaseViewController.h"
+#import "WCQuestionViewController.h"
 
-@interface WCBaseViewController ()
+@interface WCQuestionViewController ()
 
 @end
 
-@implementation WCBaseViewController
+@implementation WCQuestionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = [UIColor  whiteColor];
     // Do any additional setup after loading the view.
 }
 

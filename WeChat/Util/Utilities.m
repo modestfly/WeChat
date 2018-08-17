@@ -11,4 +11,62 @@
 
 @implementation Utilities
 
++(UIColor *)colorWithHexString:(NSString *)stringToConvert
+{
+    NSString *cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    //if ([cString length] < 6) return DEFAULT_VOID_COLOR;
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    if ([cString hasPrefix:@"#"]) cString = [cString substringFromIndex:1];
+    //if ([cString length] != 6) return DEFAULT_VOID_COLOR;
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithSafeRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithSafeRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithSafeRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    //NSLog(@"%f:::%f:::%f",((float) r / 255.0f),((float) g / 255.0f),((float) b / 255.0f));
+    
+    return SF_COLOR(((float) r / 255.0f),((float) g / 255.0f),((float) b / 255.0f), 1);
+}
 @end
+
+
+@implementation NSString (NSStringExtend)
+
+- (NSString *)substringWithSafeRange:(NSRange)range
+{
+    if (self.length >= range.location + range.length) {
+        
+        return [self substringWithRange:range];
+    }else{
+        
+        return [self substringWithRange:NSMakeRange(range.location, self.length - range.location)];
+    }
+}
+- (NSString *)subStringFrom:(NSString *)startString to:(NSString *)endString{
+    
+    NSRange startRange = [self rangeOfString:startString];
+    NSRange endRange = [self rangeOfString:endString];
+    NSRange range = NSMakeRange(startRange.location + startRange.length, endRange.location - startRange.location - startRange.length);
+    return [self substringWithRange:range];
+    
+}
+@end
+
+
+
