@@ -15,6 +15,8 @@
 		521BF3632126563C00D9F58A /* WeChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3622126563C00D9F58A /* WeChatUITests.m */; };
 		521BF372212656FA00D9F58A /* WCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF371212656FA00D9F58A /* WCBaseViewController.m */; };
 		521BF3752126578000D9F58A /* WCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3742126578000D9F58A /* WCMainViewController.m */; };
+		521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF37C2126627D00D9F58A /* WCLoginViewController.m */; };
+		521BF3832126681D00D9F58A /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3822126681D00D9F58A /* Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		521BF371212656FA00D9F58A /* WCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCBaseViewController.m; sourceTree = "<group>"; };
 		521BF3732126578000D9F58A /* WCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMainViewController.h; sourceTree = "<group>"; };
 		521BF3742126578000D9F58A /* WCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainViewController.m; sourceTree = "<group>"; };
+		521BF37B2126627D00D9F58A /* WCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCLoginViewController.h; sourceTree = "<group>"; };
+		521BF37C2126627D00D9F58A /* WCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCLoginViewController.m; sourceTree = "<group>"; };
+		521BF3812126681D00D9F58A /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		521BF3822126681D00D9F58A /* Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		5275E675A0D8B93E609394C7 /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +158,10 @@
 		521BF37721265D1F00D9F58A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				521BF3802126659500D9F58A /* 聊天 */,
+				521BF37F2126657F00D9F58A /* 个人资料 */,
+				521BF37E2126656400D9F58A /* 首页 */,
+				521BF37A2126623900D9F58A /* 登录注册 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -166,8 +176,40 @@
 		521BF37921265D3E00D9F58A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				521BF3812126681D00D9F58A /* Utilities.h */,
+				521BF3822126681D00D9F58A /* Utilities.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		521BF37A2126623900D9F58A /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				521BF37B2126627D00D9F58A /* WCLoginViewController.h */,
+				521BF37C2126627D00D9F58A /* WCLoginViewController.m */,
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
+		521BF37E2126656400D9F58A /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		521BF37F2126657F00D9F58A /* 个人资料 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "个人资料";
+			sourceTree = "<group>";
+		};
+		521BF3802126659500D9F58A /* 聊天 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "聊天";
 			sourceTree = "<group>";
 		};
 		CB07FB23E5E8B641C6ACE4B5 /* Pods */ = {
@@ -337,10 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521BF3832126681D00D9F58A /* Utilities.m in Sources */,
 				521BF372212656FA00D9F58A /* WCBaseViewController.m in Sources */,
 				521BF34E2126563C00D9F58A /* main.m in Sources */,
 				521BF3402126563A00D9F58A /* AppDelegate.m in Sources */,
 				521BF3752126578000D9F58A /* WCMainViewController.m in Sources */,
+				521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

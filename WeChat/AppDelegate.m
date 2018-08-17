@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "WCMainViewController.h"
+#import "WCLoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +19,8 @@
     // Override point for customization after application launch.
     //程序视图搭建开始
     [self setupRootViewController];
+    // 设置外观代理
+    [self setupWCappearence];
     
     return YES;
 }
@@ -28,15 +30,24 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    WCMainViewController *viewcontroller = [[WCMainViewController alloc] init];
+    WCLoginViewController *viewcontroller = [[WCLoginViewController alloc] init];
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewcontroller];
     
     self.window.rootViewController = nav;
     
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [self.window makeKeyAndVisible];
     
 }
+#pragma mark 设置外观及控制器的字体
+- (void)setupWCappearence {
+    //设置导航栏字体颜色与大小
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                         NSFontAttributeName : [UIFont boldSystemFontOfSize:18]};
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
