@@ -2,7 +2,7 @@
 //  WCMainViewController.m
 //  WeChat
 //
-//  Created by test on 2018/8/17.
+//  Created by test on 2018/8/20.
 //  Copyright © 2018年 SkyFly. All rights reserved.
 //
 
@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor grayColor];
+    self.navigationItem.title = @"随聊";
+    [self.navigationItem setHidesBackButton:YES];
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // Do any additional setup after loading the view.
 }
 

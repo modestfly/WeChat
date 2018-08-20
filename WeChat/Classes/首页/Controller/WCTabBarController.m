@@ -12,21 +12,35 @@
 #import "WCChatListViewController.h"
 #import "WCMyDetailViewController.h"
 #import "WCSearchListViewController.h"
+#import "AppDelegate.h"
 @interface WCTabBarController ()<UITabBarControllerDelegate>
 
 @end
-
 @implementation WCTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self addChildViewControllers];
+
+    AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.tabBarCtrl = self;
 }
 
-#pragma mark 创建tabbar
--(void)setupTabBar{
-    UITabBarController *tabbarController = [[UITabBarController alloc]init];
-    tabbarController.delegate = self;
+#pragma mark 添加子控制器
+-(void)addChildViewControllers{
+    
+    WCMainViewController *mainVC = [[WCMainViewController alloc]init];
+    [self setupChildViewController:mainVC title:@"首页" normalName:@"" selectedName:@""];
+    
+    WCSearchListViewController *searchVC = [[WCSearchListViewController alloc]init];
+    [self setupChildViewController:searchVC title:@"探索" normalName:@"" selectedName:@""];
+    
+    WCChatListViewController *chatVC = [[WCChatListViewController alloc]init];
+    [self setupChildViewController:chatVC title:@"消息" normalName:@"" selectedName:@""];
+    
+    WCMyDetailViewController *myDetailVC = [[WCMyDetailViewController alloc]init];
+    [self setupChildViewController:myDetailVC title:@"我的" normalName:@"" selectedName:@""];
+    
     
     
 }
@@ -49,6 +63,8 @@
     
     // 创建导航栏控制器
     WCTabBarNavigation *nav = [[WCTabBarNavigation alloc] initWithRootViewController:childViewController];
+    
+
     
     // 添加子控制器
     [self addChildViewController:nav];

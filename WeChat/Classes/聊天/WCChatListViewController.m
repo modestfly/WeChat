@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"消息";
+    
+    [self.navigationItem setHidesBackButton:YES];
     // Do any additional setup after loading the view.
 }
 

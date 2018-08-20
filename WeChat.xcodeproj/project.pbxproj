@@ -14,7 +14,6 @@
 		521BF3582126563C00D9F58A /* WeChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3572126563C00D9F58A /* WeChatTests.m */; };
 		521BF3632126563C00D9F58A /* WeChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3622126563C00D9F58A /* WeChatUITests.m */; };
 		521BF372212656FA00D9F58A /* WCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF371212656FA00D9F58A /* WCBaseViewController.m */; };
-		521BF3752126578000D9F58A /* WCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3742126578000D9F58A /* WCMainViewController.m */; };
 		521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF37C2126627D00D9F58A /* WCLoginViewController.m */; };
 		521BF3832126681D00D9F58A /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3822126681D00D9F58A /* Utilities.m */; };
 		521BF3862126A69D00D9F58A /* 蓝色选框-圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 521BF3852126A69D00D9F58A /* 蓝色选框-圆角.png */; };
@@ -25,8 +24,7 @@
 		528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B14212A87F60014FAAF /* WCChatListViewController.m */; };
 		528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B18212A88220014FAAF /* WCSearchListViewController.m */; };
 		528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */; };
-		528D5B23212A90520014FAAF /* WCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B22212A90520014FAAF /* WCTabBar.m */; };
-		528D5B26212A90790014FAAF /* WCTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B25212A90790014FAAF /* WCTabBarButton.m */; };
+		528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B2B212A98770014FAAF /* WCMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +59,6 @@
 		521BF3642126563C00D9F58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521BF370212656FA00D9F58A /* WCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCBaseViewController.h; sourceTree = "<group>"; };
 		521BF371212656FA00D9F58A /* WCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCBaseViewController.m; sourceTree = "<group>"; };
-		521BF3732126578000D9F58A /* WCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMainViewController.h; sourceTree = "<group>"; };
-		521BF3742126578000D9F58A /* WCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainViewController.m; sourceTree = "<group>"; };
 		521BF37B2126627D00D9F58A /* WCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCLoginViewController.h; sourceTree = "<group>"; };
 		521BF37C2126627D00D9F58A /* WCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCLoginViewController.m; sourceTree = "<group>"; };
 		521BF3812126681D00D9F58A /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -83,10 +79,8 @@
 		528D5B18212A88220014FAAF /* WCSearchListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCSearchListViewController.m; sourceTree = "<group>"; };
 		528D5B1A212A8A6D0014FAAF /* WCTabBarNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBarNavigation.h; sourceTree = "<group>"; };
 		528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBarNavigation.m; sourceTree = "<group>"; };
-		528D5B21212A90520014FAAF /* WCTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBar.h; sourceTree = "<group>"; };
-		528D5B22212A90520014FAAF /* WCTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBar.m; sourceTree = "<group>"; };
-		528D5B24212A90790014FAAF /* WCTabBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBarButton.h; sourceTree = "<group>"; };
-		528D5B25212A90790014FAAF /* WCTabBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBarButton.m; sourceTree = "<group>"; };
+		528D5B2A212A98770014FAAF /* WCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMainViewController.h; sourceTree = "<group>"; };
+		528D5B2B212A98770014FAAF /* WCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainViewController.m; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,12 +258,12 @@
 		528D5B1E212A8FA50014FAAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				521BF3732126578000D9F58A /* WCMainViewController.h */,
-				521BF3742126578000D9F58A /* WCMainViewController.m */,
 				528D5B0D212A6D370014FAAF /* WCTabBarController.h */,
 				528D5B0E212A6D370014FAAF /* WCTabBarController.m */,
 				528D5B1A212A8A6D0014FAAF /* WCTabBarNavigation.h */,
 				528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */,
+				528D5B2A212A98770014FAAF /* WCMainViewController.h */,
+				528D5B2B212A98770014FAAF /* WCMainViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,10 +278,6 @@
 		528D5B20212A8FC80014FAAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				528D5B21212A90520014FAAF /* WCTabBar.h */,
-				528D5B22212A90520014FAAF /* WCTabBar.m */,
-				528D5B24212A90790014FAAF /* WCTabBarButton.h */,
-				528D5B25212A90790014FAAF /* WCTabBarButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -461,19 +451,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				521BF3892126B56400D9F58A /* WCFrogetPasswordViewController.m in Sources */,
-				528D5B23212A90520014FAAF /* WCTabBar.m in Sources */,
 				521BF3832126681D00D9F58A /* Utilities.m in Sources */,
 				521BF372212656FA00D9F58A /* WCBaseViewController.m in Sources */,
 				521BF34E2126563C00D9F58A /* main.m in Sources */,
 				528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */,
 				521BF3402126563A00D9F58A /* AppDelegate.m in Sources */,
 				528D5B12212A87DA0014FAAF /* WCMyDetailViewController.m in Sources */,
+				528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */,
 				528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */,
 				528D5B0F212A6D370014FAAF /* WCTabBarController.m in Sources */,
-				521BF3752126578000D9F58A /* WCMainViewController.m in Sources */,
 				521BF38C2126B57F00D9F58A /* WCQuestionViewController.m in Sources */,
 				528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */,
-				528D5B26212A90790014FAAF /* WCTabBarButton.m in Sources */,
 				521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

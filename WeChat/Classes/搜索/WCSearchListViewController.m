@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"探索";
+    NSLog(@"%@",self.navigationItem);
     // Do any additional setup after loading the view.
 }
 

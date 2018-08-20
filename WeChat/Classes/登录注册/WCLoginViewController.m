@@ -25,6 +25,7 @@
     // Do any additional setup after loading the view.
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -183,6 +184,7 @@
 -(void)goToMain{
     
     WCTabBarController *tabCon = [[WCTabBarController alloc]init];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.navigationController pushViewController:tabCon animated:YES];
 }
 #pragma mark 忘记密码点击按钮

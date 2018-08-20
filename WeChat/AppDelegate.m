@@ -36,6 +36,8 @@
     
     self.window.rootViewController = nav;
     
+    self.rootnavCtrl = nav;
+
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [self.window makeKeyAndVisible];
