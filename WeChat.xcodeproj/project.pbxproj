@@ -20,6 +20,13 @@
 		521BF3862126A69D00D9F58A /* 蓝色选框-圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 521BF3852126A69D00D9F58A /* 蓝色选框-圆角.png */; };
 		521BF3892126B56400D9F58A /* WCFrogetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF3882126B56400D9F58A /* WCFrogetPasswordViewController.m */; };
 		521BF38C2126B57F00D9F58A /* WCQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521BF38B2126B57F00D9F58A /* WCQuestionViewController.m */; };
+		528D5B0F212A6D370014FAAF /* WCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B0E212A6D370014FAAF /* WCTabBarController.m */; };
+		528D5B12212A87DA0014FAAF /* WCMyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B11212A87DA0014FAAF /* WCMyDetailViewController.m */; };
+		528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B14212A87F60014FAAF /* WCChatListViewController.m */; };
+		528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B18212A88220014FAAF /* WCSearchListViewController.m */; };
+		528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */; };
+		528D5B23212A90520014FAAF /* WCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B22212A90520014FAAF /* WCTabBar.m */; };
+		528D5B26212A90790014FAAF /* WCTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B25212A90790014FAAF /* WCTabBarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +73,20 @@
 		521BF38A2126B57F00D9F58A /* WCQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCQuestionViewController.h; sourceTree = "<group>"; };
 		521BF38B2126B57F00D9F58A /* WCQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCQuestionViewController.m; sourceTree = "<group>"; };
 		5275E675A0D8B93E609394C7 /* Pods-WeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.debug.xcconfig"; sourceTree = "<group>"; };
+		528D5B0D212A6D370014FAAF /* WCTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBarController.h; sourceTree = "<group>"; };
+		528D5B0E212A6D370014FAAF /* WCTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBarController.m; sourceTree = "<group>"; };
+		528D5B10212A87DA0014FAAF /* WCMyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMyDetailViewController.h; sourceTree = "<group>"; };
+		528D5B11212A87DA0014FAAF /* WCMyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMyDetailViewController.m; sourceTree = "<group>"; };
+		528D5B13212A87F60014FAAF /* WCChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCChatListViewController.h; sourceTree = "<group>"; };
+		528D5B14212A87F60014FAAF /* WCChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCChatListViewController.m; sourceTree = "<group>"; };
+		528D5B17212A88220014FAAF /* WCSearchListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCSearchListViewController.h; sourceTree = "<group>"; };
+		528D5B18212A88220014FAAF /* WCSearchListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCSearchListViewController.m; sourceTree = "<group>"; };
+		528D5B1A212A8A6D0014FAAF /* WCTabBarNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBarNavigation.h; sourceTree = "<group>"; };
+		528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBarNavigation.m; sourceTree = "<group>"; };
+		528D5B21212A90520014FAAF /* WCTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBar.h; sourceTree = "<group>"; };
+		528D5B22212A90520014FAAF /* WCTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBar.m; sourceTree = "<group>"; };
+		528D5B24212A90790014FAAF /* WCTabBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCTabBarButton.h; sourceTree = "<group>"; };
+		528D5B25212A90790014FAAF /* WCTabBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBarButton.m; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,8 +150,6 @@
 				521BF33F2126563A00D9F58A /* AppDelegate.m */,
 				521BF370212656FA00D9F58A /* WCBaseViewController.h */,
 				521BF371212656FA00D9F58A /* WCBaseViewController.m */,
-				521BF3732126578000D9F58A /* WCMainViewController.h */,
-				521BF3742126578000D9F58A /* WCMainViewController.m */,
 				521BF3472126563C00D9F58A /* Assets.xcassets */,
 				521BF34C2126563C00D9F58A /* Info.plist */,
 				521BF34D2126563C00D9F58A /* main.m */,
@@ -166,6 +185,7 @@
 		521BF37721265D1F00D9F58A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				528D5B16212A87FE0014FAAF /* 搜索 */,
 				521BF3802126659500D9F58A /* 聊天 */,
 				521BF37F2126657F00D9F58A /* 个人资料 */,
 				521BF37E2126656400D9F58A /* 首页 */,
@@ -207,6 +227,9 @@
 		521BF37E2126656400D9F58A /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				528D5B20212A8FC80014FAAF /* View */,
+				528D5B1F212A8FBD0014FAAF /* Model */,
+				528D5B1E212A8FA50014FAAF /* Controller */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -214,6 +237,8 @@
 		521BF37F2126657F00D9F58A /* 个人资料 */ = {
 			isa = PBXGroup;
 			children = (
+				528D5B10212A87DA0014FAAF /* WCMyDetailViewController.h */,
+				528D5B11212A87DA0014FAAF /* WCMyDetailViewController.m */,
 			);
 			path = "个人资料";
 			sourceTree = "<group>";
@@ -221,8 +246,50 @@
 		521BF3802126659500D9F58A /* 聊天 */ = {
 			isa = PBXGroup;
 			children = (
+				528D5B13212A87F60014FAAF /* WCChatListViewController.h */,
+				528D5B14212A87F60014FAAF /* WCChatListViewController.m */,
 			);
 			path = "聊天";
+			sourceTree = "<group>";
+		};
+		528D5B16212A87FE0014FAAF /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				528D5B17212A88220014FAAF /* WCSearchListViewController.h */,
+				528D5B18212A88220014FAAF /* WCSearchListViewController.m */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
+		528D5B1E212A8FA50014FAAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521BF3732126578000D9F58A /* WCMainViewController.h */,
+				521BF3742126578000D9F58A /* WCMainViewController.m */,
+				528D5B0D212A6D370014FAAF /* WCTabBarController.h */,
+				528D5B0E212A6D370014FAAF /* WCTabBarController.m */,
+				528D5B1A212A8A6D0014FAAF /* WCTabBarNavigation.h */,
+				528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		528D5B1F212A8FBD0014FAAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		528D5B20212A8FC80014FAAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				528D5B21212A90520014FAAF /* WCTabBar.h */,
+				528D5B22212A90520014FAAF /* WCTabBar.m */,
+				528D5B24212A90790014FAAF /* WCTabBarButton.h */,
+				528D5B25212A90790014FAAF /* WCTabBarButton.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CB07FB23E5E8B641C6ACE4B5 /* Pods */ = {
@@ -394,12 +461,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				521BF3892126B56400D9F58A /* WCFrogetPasswordViewController.m in Sources */,
+				528D5B23212A90520014FAAF /* WCTabBar.m in Sources */,
 				521BF3832126681D00D9F58A /* Utilities.m in Sources */,
 				521BF372212656FA00D9F58A /* WCBaseViewController.m in Sources */,
 				521BF34E2126563C00D9F58A /* main.m in Sources */,
+				528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */,
 				521BF3402126563A00D9F58A /* AppDelegate.m in Sources */,
+				528D5B12212A87DA0014FAAF /* WCMyDetailViewController.m in Sources */,
+				528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */,
+				528D5B0F212A6D370014FAAF /* WCTabBarController.m in Sources */,
 				521BF3752126578000D9F58A /* WCMainViewController.m in Sources */,
 				521BF38C2126B57F00D9F58A /* WCQuestionViewController.m in Sources */,
+				528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */,
+				528D5B26212A90790014FAAF /* WCTabBarButton.m in Sources */,
 				521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

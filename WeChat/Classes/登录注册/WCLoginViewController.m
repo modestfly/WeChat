@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "WCFrogetPasswordViewController.h"
 #import "WCQuestionViewController.h"
+#import "WCTabBarController.h"
 @interface WCLoginViewController ()<UITextFieldDelegate>
 
 @end
@@ -67,7 +68,7 @@
     [self.view addSubview:loginButton];
     //忘记密码
     UIButton *frogetButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    frogetButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    frogetButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [frogetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
     [frogetButton setTitleColor:[Utilities colorWithHexString:@"#888888"] forState:UIControlStateNormal];
     [frogetButton addTarget:self action:@selector(frogetBtClick) forControlEvents:UIControlEventTouchUpInside];
@@ -75,13 +76,36 @@
     [self.view addSubview:frogetButton];
     //问题反馈
     UIButton *questionButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    questionButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    questionButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [questionButton setTitle:@"问题反馈" forState:UIControlStateNormal];
     [questionButton setTitleColor:[Utilities colorWithHexString:@"#888888"] forState:UIControlStateNormal];
     [questionButton addTarget:self action:@selector(questionBtClick) forControlEvents:UIControlEventTouchUpInside];
     questionButton.userInteractionEnabled = YES;
     [self.view addSubview:questionButton];
-    
+    //手机注册
+    UIButton *phoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    phoneButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [phoneButton setTitle:@"手机注册" forState:UIControlStateNormal];
+    [phoneButton setTitleColor:[Utilities colorWithHexString:@"#888888"] forState:UIControlStateNormal];
+    [phoneButton addTarget:self action:@selector(phoneBtClick) forControlEvents:UIControlEventTouchUpInside];
+    phoneButton.userInteractionEnabled = YES;
+    [self.view addSubview:phoneButton];
+    //微信登录
+    UIButton *chatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    chatButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [chatButton setTitle:@"微信登录" forState:UIControlStateNormal];
+    [chatButton setTitleColor:[Utilities colorWithHexString:@"#888888"] forState:UIControlStateNormal];
+    [chatButton addTarget:self action:@selector(chatBtClick) forControlEvents:UIControlEventTouchUpInside];
+    chatButton.userInteractionEnabled = YES;
+    [self.view addSubview:chatButton];
+    //QQ登录
+    UIButton *qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    qqButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [qqButton setTitle:@"QQ登录" forState:UIControlStateNormal];
+    [qqButton setTitleColor:[Utilities colorWithHexString:@"#888888"] forState:UIControlStateNormal];
+    [qqButton addTarget:self action:@selector(qqBtClick) forControlEvents:UIControlEventTouchUpInside];
+    qqButton.userInteractionEnabled = YES;
+    [self.view addSubview:qqButton];
     
     
     [self.userNameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,7 +133,7 @@
      [frogetButton mas_makeConstraints:^(MASConstraintMaker *make) {
          make.top.equalTo(loginButton.mas_bottom).offset(10);
          make.height.mas_equalTo(15);
-         make.width.mas_equalTo(80);
+         make.width.mas_equalTo(60);
          make.right.mas_equalTo(-SCREEN_WIDTH/2);
     }];
     [questionButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -117,6 +141,24 @@
         make.width.equalTo(frogetButton);
         make.height.equalTo(frogetButton);
         make.left.equalTo(frogetButton.mas_right);
+    }];
+    [phoneButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(-40);
+        make.width.equalTo(frogetButton);
+        make.height.equalTo(frogetButton);
+        make.left.equalTo(self.view).offset((SCREEN_WIDTH - 180)/4);
+    }];
+    [chatButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(phoneButton);
+        make.height.equalTo(phoneButton);
+        make.width.equalTo(phoneButton);
+        make.left.equalTo(phoneButton.mas_right).offset((SCREEN_WIDTH - 180)/4);
+    }];
+    [qqButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(phoneButton);
+        make.right.equalTo(self.view).offset(-(SCREEN_WIDTH - 180)/4);
+        make.height.equalTo(phoneButton);
+        make.width.equalTo(phoneButton);
     }];
     
 }
@@ -135,6 +177,13 @@
 - (void)loginBtClick{
     [self.userNameTextField resignFirstResponder];
     [self.passWordTextField resignFirstResponder];
+    [self goToMain];
+}
+#pragma mark 跳转到主界面
+-(void)goToMain{
+    
+    WCTabBarController *tabCon = [[WCTabBarController alloc]init];
+    [self.navigationController pushViewController:tabCon animated:YES];
 }
 #pragma mark 忘记密码点击按钮
 -(void)frogetBtClick{
@@ -145,6 +194,19 @@
 -(void)questionBtClick{
     
     
+}
+#pragma mark 手机注册
+-(void)phoneBtClick{
+    
+}
+#pragma mark 微信登录
+-(void)chatBtClick{
+    
+}
+#pragma mark QQ登录
+-(void)qqBtClick{
+    
+
 }
 /*
 #pragma mark - Navigation
