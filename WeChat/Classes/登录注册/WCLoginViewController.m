@@ -184,16 +184,22 @@
 -(void)goToMain{
     
     WCTabBarController *tabCon = [[WCTabBarController alloc]init];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [self.navigationController pushViewController:tabCon animated:YES];
 }
 #pragma mark 忘记密码点击按钮
 -(void)frogetBtClick{
+    WCFrogetPasswordViewController *wcfrogetVC = [[WCFrogetPasswordViewController alloc]init];
     
+    [self.navigationController pushViewController:wcfrogetVC animated:YES];
     
 }
 #pragma mark 问题反馈点击按钮
 -(void)questionBtClick{
+    
+    WCQuestionViewController *wcQuestionVC = [[WCQuestionViewController alloc] init];
+    
+    [self.navigationController pushViewController:wcQuestionVC animated:YES];
     
     
 }

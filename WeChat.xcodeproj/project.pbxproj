@@ -25,6 +25,9 @@
 		528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B18212A88220014FAAF /* WCSearchListViewController.m */; };
 		528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */; };
 		528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B2B212A98770014FAAF /* WCMainViewController.m */; };
+		528D5B30212AC6CB0014FAAF /* WCSocketConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B2F212AC6CB0014FAAF /* WCSocketConnect.m */; };
+		528D5B33212BEC840014FAAF /* WCMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B32212BEC840014FAAF /* WCMainTableViewCell.m */; };
+		528D5B39212BF05F0014FAAF /* WCChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B38212BF05F0014FAAF /* WCChatListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,12 @@
 		528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCTabBarNavigation.m; sourceTree = "<group>"; };
 		528D5B2A212A98770014FAAF /* WCMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMainViewController.h; sourceTree = "<group>"; };
 		528D5B2B212A98770014FAAF /* WCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainViewController.m; sourceTree = "<group>"; };
+		528D5B2E212AC6CB0014FAAF /* WCSocketConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCSocketConnect.h; sourceTree = "<group>"; };
+		528D5B2F212AC6CB0014FAAF /* WCSocketConnect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCSocketConnect.m; sourceTree = "<group>"; };
+		528D5B31212BEC840014FAAF /* WCMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMainTableViewCell.h; sourceTree = "<group>"; };
+		528D5B32212BEC840014FAAF /* WCMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainTableViewCell.m; sourceTree = "<group>"; };
+		528D5B37212BF05F0014FAAF /* WCChatListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCChatListTableViewCell.h; sourceTree = "<group>"; };
+		528D5B38212BF05F0014FAAF /* WCChatListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCChatListTableViewCell.m; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +208,7 @@
 		521BF37921265D3E00D9F58A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				528D5B2D212AC65B0014FAAF /* Socket */,
 				521BF3812126681D00D9F58A /* Utilities.h */,
 				521BF3822126681D00D9F58A /* Utilities.m */,
 			);
@@ -240,8 +250,9 @@
 		521BF3802126659500D9F58A /* 聊天 */ = {
 			isa = PBXGroup;
 			children = (
-				528D5B13212A87F60014FAAF /* WCChatListViewController.h */,
-				528D5B14212A87F60014FAAF /* WCChatListViewController.m */,
+				528D5B36212BF0310014FAAF /* View */,
+				528D5B35212BF0280014FAAF /* Model */,
+				528D5B34212BF01A0014FAAF /* Controller */,
 			);
 			path = "聊天";
 			sourceTree = "<group>";
@@ -278,6 +289,42 @@
 		528D5B20212A8FC80014FAAF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				528D5B31212BEC840014FAAF /* WCMainTableViewCell.h */,
+				528D5B32212BEC840014FAAF /* WCMainTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		528D5B2D212AC65B0014FAAF /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				528D5B2E212AC6CB0014FAAF /* WCSocketConnect.h */,
+				528D5B2F212AC6CB0014FAAF /* WCSocketConnect.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		528D5B34212BF01A0014FAAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				528D5B13212A87F60014FAAF /* WCChatListViewController.h */,
+				528D5B14212A87F60014FAAF /* WCChatListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		528D5B35212BF0280014FAAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		528D5B36212BF0310014FAAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				528D5B37212BF05F0014FAAF /* WCChatListTableViewCell.h */,
+				528D5B38212BF05F0014FAAF /* WCChatListTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,10 +504,13 @@
 				528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */,
 				521BF3402126563A00D9F58A /* AppDelegate.m in Sources */,
 				528D5B12212A87DA0014FAAF /* WCMyDetailViewController.m in Sources */,
+				528D5B30212AC6CB0014FAAF /* WCSocketConnect.m in Sources */,
 				528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */,
+				528D5B33212BEC840014FAAF /* WCMainTableViewCell.m in Sources */,
 				528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */,
 				528D5B0F212A6D370014FAAF /* WCTabBarController.m in Sources */,
 				521BF38C2126B57F00D9F58A /* WCQuestionViewController.m in Sources */,
+				528D5B39212BF05F0014FAAF /* WCChatListTableViewCell.m in Sources */,
 				528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */,
 				521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */,
 			);

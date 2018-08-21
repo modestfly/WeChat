@@ -1,29 +1,27 @@
 //
-//  WCMainViewController.m
+//  WCChatListViewController.m
 //  WeChat
 //
 //  Created by test on 2018/8/20.
 //  Copyright © 2018年 SkyFly. All rights reserved.
 //
 
-#import "WCMainViewController.h"
-#import "WCMainTableViewCell.h"
-@interface WCMainViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "WCChatListViewController.h"
+#import "WCChatListTableViewCell.h"
+@interface WCChatListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
-@implementation WCMainViewController
+@implementation WCChatListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"随聊";
-    [self.navigationItem setHidesBackButton:YES];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationItem.title = @"消息";
     //基本的tableview的界面布局
     [self creatBasicView];
-    
     // Do any additional setup after loading the view.
 }
+
 #pragma mark 创建界面
 -(void)creatBasicView{
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -45,19 +43,18 @@
     return 40;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    WCMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    WCChatListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if(!cell){
-        cell = [[WCMainTableViewCell alloc] init];
+        cell = [[WCChatListTableViewCell alloc] init];
     }
     
     return cell;
+    
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     NSLog(@"点击了吗");
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
