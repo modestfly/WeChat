@@ -205,14 +205,15 @@
 }
 #pragma mark 手机注册
 -(void)phoneBtClick{
-    
+    //点击按钮跳转一个手机注册界面
 }
 #pragma mark 微信登录
 -(void)chatBtClick{
-    
+    //微信第三方登录
 }
 #pragma mark QQ登录
 -(void)qqBtClick{
+    //QQ第三方登录
     
 
 }

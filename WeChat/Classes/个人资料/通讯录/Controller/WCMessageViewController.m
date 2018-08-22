@@ -1,43 +1,45 @@
 //
-//  WCChatListViewController.m
+//  WCMessageViewController.m
 //  WeChat
 //
-//  Created by test on 2018/8/20.
+//  Created by test on 2018/8/22.
 //  Copyright © 2018年 SkyFly. All rights reserved.
 //
 
-#import "WCChatListViewController.h"
-#import "WCChatListTableViewCell.h"
 #import "WCMessageViewController.h"
-#import "Utilities.h"
-@interface WCChatListViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "WCMessageTableViewCell.h"
+#import "WCSearchFriendsViewController.h"
+@interface WCMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation WCChatListViewController
+@implementation WCMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"消息";
-    //基本的tableview的界面布局
+    self.navigationItem.title=@"通讯录";
     [self creatBasicView];
     // Do any additional setup after loading the view.
 }
-
 #pragma mark 创建界面
 -(void)creatBasicView{
+    //创建导航栏的左侧按钮
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 34, 16)];
+    [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
+    [button addTarget:self action:@selector(backForword) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = backButton;
     //创建导航栏的右侧的按钮
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     rightButton.frame = CGRectMake(0, 0, 44, 16);
     rightButton.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [rightButton setTitle:@"通讯录" forState:UIControlStateNormal];
+    [rightButton setTitle:@"添加好友" forState:UIControlStateNormal];
     [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightItem;
-    
-    
-    
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -58,10 +60,10 @@
     return 40;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    WCChatListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    WCMessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if(!cell){
-        cell = [[WCChatListTableViewCell alloc] init];
+        cell = [[WCMessageTableViewCell alloc] init];
     }
     
     return cell;
@@ -73,10 +75,13 @@
 #pragma mark 点击右侧导航栏按钮跳转的方法
 -(void)rightButtonClick{
     
-    WCMessageViewController *messageVC = [[WCMessageViewController alloc] init];
+    WCSearchFriendsViewController *searchVC = [[WCSearchFriendsViewController alloc] init];
     
-    [self.navigationController pushViewController:messageVC animated:YES];
+    [self.navigationController pushViewController:searchVC animated:YES];
     
+}
+-(void)backForword{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,9 @@
 #define KTOASTLA CGRectMake((SCREEN_WIDTH - 200)/2.0, SCREEN_HEIGHT/2-50-NAVIGATIONBAR_HEIGHT, 200, 50)
 //定义个颜色，按色度来进行定义
 #define SF_COLOR(RED, GREEN, BLUE, ALPHA)    [UIColor colorWithRed:RED green:GREEN blue:BLUE alpha:ALPHA]
+//定义操作系统的版本
+
+
 
 @interface Utilities : NSObject
 
