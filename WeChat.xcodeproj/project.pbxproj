@@ -252,6 +252,7 @@
 		521BF37F2126657F00D9F58A /* 个人资料 */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B6A5212E9691000B0B11 /* 信息详情 */,
 				528D5B4F212CF23C0014FAAF /* 搜索好友 */,
 				528D5B42212CEE7C0014FAAF /* 通讯录 */,
 				528D5B41212C16740014FAAF /* Model */,
@@ -478,6 +479,37 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52E1B6A5212E9691000B0B11 /* 信息详情 */ = {
+			isa = PBXGroup;
+			children = (
+				52E1B6A8212E96B8000B0B11 /* Model */,
+				52E1B6A7212E96B0000B0B11 /* View */,
+				52E1B6A6212E96A4000B0B11 /* Controller */,
+			);
+			path = "信息详情";
+			sourceTree = "<group>";
+		};
+		52E1B6A6212E96A4000B0B11 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52E1B6A7212E96B0000B0B11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52E1B6A8212E96B8000B0B11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CB07FB23E5E8B641C6ACE4B5 /* Pods */ = {
