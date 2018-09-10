@@ -37,8 +37,6 @@
     self.navigationItem.rightBarButtonItem = rightItem;
     
     
-    
-    
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.delegate = self;

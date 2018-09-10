@@ -10,15 +10,19 @@
 #import "WCMainTableViewCell.h"
 @interface WCMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 
+
 @end
 
 @implementation WCMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"随聊";
+    self.navigationItem.title = @"";
     [self.navigationItem setHidesBackButton:YES];
-    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor blueColor]];
+    
+    //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     //基本的tableview的界面布局
     [self creatBasicView];
     

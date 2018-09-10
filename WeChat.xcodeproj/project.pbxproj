@@ -242,6 +242,9 @@
 		521BF37E2126656400D9F58A /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B6F821463479000B0B11 /* 第三模块 */,
+				52E1B6F721463470000B0B11 /* 第二模块 */,
+				52E1B6F62146344F000B0B11 /* 第一模块 */,
 				528D5B20212A8FC80014FAAF /* View */,
 				528D5B1F212A8FBD0014FAAF /* Model */,
 				528D5B1E212A8FA50014FAAF /* Controller */,
@@ -510,6 +513,27 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		52E1B6F62146344F000B0B11 /* 第一模块 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "第一模块";
+			sourceTree = "<group>";
+		};
+		52E1B6F721463470000B0B11 /* 第二模块 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "第二模块";
+			sourceTree = "<group>";
+		};
+		52E1B6F821463479000B0B11 /* 第三模块 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "第三模块";
 			sourceTree = "<group>";
 		};
 		CB07FB23E5E8B641C6ACE4B5 /* Pods */ = {
@@ -854,8 +878,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YME369D6D;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -874,8 +899,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YME369D6D;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WeChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

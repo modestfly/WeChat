@@ -9,6 +9,7 @@
 #import "WCLoginViewController.h"
 #import "Utilities.h"
 #import <Masonry.h>
+#import <AFNetworking.h>
 #import "WCFrogetPasswordViewController.h"
 #import "WCQuestionViewController.h"
 #import "WCTabBarController.h"
@@ -68,7 +69,7 @@
     loginButton.userInteractionEnabled=YES;
     [self.view addSubview:loginButton];
     //忘记密码
-    UIButton *frogetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+/*    UIButton *frogetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     frogetButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [frogetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
     [frogetButton setTitleColor:[Utilities colorWithHexString:@"#888888"] forState:UIControlStateNormal];
@@ -108,7 +109,7 @@
     qqButton.userInteractionEnabled = YES;
     [self.view addSubview:qqButton];
     
-    
+    */
     [self.userNameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(wechatImageView);
         make.top.equalTo(wechatImageView.mas_bottom).offset(30);
@@ -131,6 +132,7 @@
         make.height.equalTo(self.userNameTextField);
         
     }];
+    /*
      [frogetButton mas_makeConstraints:^(MASConstraintMaker *make) {
          make.top.equalTo(loginButton.mas_bottom).offset(10);
          make.height.mas_equalTo(15);
@@ -161,6 +163,7 @@
         make.height.equalTo(phoneButton);
         make.width.equalTo(phoneButton);
     }];
+     */
     
 }
 #pragma mark textField 协议方法
@@ -178,8 +181,95 @@
 - (void)loginBtClick{
     [self.userNameTextField resignFirstResponder];
     [self.passWordTextField resignFirstResponder];
-    [self goToMain];
+    //进行用户名和密码加密和登录网络请求
+    [self loginWithNameAndPassword];
+ 
 }
+#pragma mark 进行登录的网络请求
+-(void)loginWithNameAndPassword{
+    
+    NSString *usernameMD5 = [[self.userNameTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    
+    NSString *passwordMD5 = [[self.passWordTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    
+     NSLog(@"usernameMD5:%@,passwordMD5:%@",usernameMD5,passwordMD5);
+    
+//    NSString *identify = [[UIDevice currentDevice] identifierForVendor].UUIDString;
+//    NSLog(@"唯一标识:%@",identify);
+//    NSString *bundleIdentify = [[NSBundle mainBundle]bundleIdentifier];
+//    NSLog(@"bundleIdentify:%@",bundleIdentify);
+    
+    //YD单点登录接口测试
+    NSString *url = @"http://10.20.100.3:8080/oauth/token";
+    NSString *basic =[[@"acme:acmesecret" dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+
+    NSString *headvalue = [NSString stringWithFormat:@"Basic %@",basic];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:1];
+
+    [parameters setObject:@"sa" forKey:@"username"];
+    [parameters setObject:@"111111" forKey:@"password"];
+    [parameters setObject:@"password" forKey:@"grant_type"];
+
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    session.responseSerializer = [AFHTTPResponseSerializer serializer];
+    session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/plain",@"text/html",@"text/json",@"application/pdf",@"application/json",nil];
+
+    session.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [session.requestSerializer setValue:headvalue forHTTPHeaderField:@"Authorization"];
+    session.requestSerializer.timeoutInterval = 20.f;//超时时间
+
+    [session POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"请求成功 + %@", str);
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         NSLog(@"请求失败 + %@",error);
+    }];
+    NSLog(@"没打印：%@",session.requestSerializer.HTTPRequestHeaders);
+    //YD应用列表接口测试
+//    NSString *urllist = @"http://10.20.100.3:8089/api-wuliu/waybill/list/1";
+//
+//    AFHTTPSessionManager *manage = [AFHTTPSessionManager manager];
+//    manage.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manage.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/plain",@"text/html",@"text/json",@"application/pdf",@"application/json",nil];
+//    manage.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    [manage.requestSerializer setValue:@"Bearer laaaaaaq" forHTTPHeaderField:@"Authorization"];
+//    manage.requestSerializer.timeoutInterval = 20.f;//超时时间
+//    //无条件的信任服务器上的证书
+//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
+//    // 客户端是否信任非法证书
+//    securityPolicy.allowInvalidCertificates = YES;
+//    // 是否在证书域字段中验证域名
+//    securityPolicy.validatesDomainName = NO;
+//    manage.securityPolicy = securityPolicy;
+//    [manage GET:urllist parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"成功");
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"请求失败:%@",error);
+//    }];
+    
+    
+     
+   [self goToMain];
+}
+- (NSStringEncoding)responseStringEncoding:(NSURLSessionDataTask *)task{
+    
+    NSURLResponse *response =task.response;
+    if (response) {
+        NSStringEncoding stringEncoding = NSUTF8StringEncoding;
+        if (response.textEncodingName) {
+            CFStringEncoding IANAEncoding = CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)response.textEncodingName);
+            if (IANAEncoding != kCFStringEncodingInvalidId) {
+                stringEncoding = CFStringConvertEncodingToNSStringEncoding(IANAEncoding);
+            }
+        }
+        
+        return   stringEncoding;
+    }
+    
+    return NSUTF8StringEncoding;
+}
+
 #pragma mark 跳转到主界面
 -(void)goToMain{
     
@@ -200,12 +290,12 @@
     WCQuestionViewController *wcQuestionVC = [[WCQuestionViewController alloc] init];
     
     [self.navigationController pushViewController:wcQuestionVC animated:YES];
-    
-    
 }
+
 #pragma mark 手机注册
 -(void)phoneBtClick{
     //点击按钮跳转一个手机注册界面
+
 }
 #pragma mark 微信登录
 -(void)chatBtClick{
@@ -215,7 +305,6 @@
 -(void)qqBtClick{
     //QQ第三方登录
     
-
 }
 /*
 #pragma mark - Navigation
