@@ -225,6 +225,14 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          NSLog(@"请求失败 + %@",error);
     }];
+    
+//    [session GET:@"https://tieba.baidu.com/hottopic/browse/topicList" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//
+//        NSLog(@"歹毒");
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//
+//        NSLog(@"不行");
+//    }];
     NSLog(@"没打印：%@",session.requestSerializer.HTTPRequestHeaders);
     //YD应用列表接口测试
 //    NSString *urllist = @"http://10.20.100.3:8089/api-wuliu/waybill/list/1";
@@ -250,7 +258,7 @@
     
     
      
-   [self goToMain];
+  // [self goToMain];
 }
 - (NSStringEncoding)responseStringEncoding:(NSURLSessionDataTask *)task{
     

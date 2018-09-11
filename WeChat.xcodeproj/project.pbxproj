@@ -26,7 +26,6 @@
 		528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B1B212A8A6D0014FAAF /* WCTabBarNavigation.m */; };
 		528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B2B212A98770014FAAF /* WCMainViewController.m */; };
 		528D5B30212AC6CB0014FAAF /* WCSocketConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B2F212AC6CB0014FAAF /* WCSocketConnect.m */; };
-		528D5B33212BEC840014FAAF /* WCMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B32212BEC840014FAAF /* WCMainTableViewCell.m */; };
 		528D5B39212BF05F0014FAAF /* WCChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B38212BF05F0014FAAF /* WCChatListTableViewCell.m */; };
 		528D5B4B212CF0A30014FAAF /* WCMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B4A212CF0A30014FAAF /* WCMessageViewController.m */; };
 		528D5B4E212CF0D70014FAAF /* WCMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B4D212CF0D70014FAAF /* WCMessageTableViewCell.m */; };
@@ -91,8 +90,6 @@
 		528D5B2B212A98770014FAAF /* WCMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainViewController.m; sourceTree = "<group>"; };
 		528D5B2E212AC6CB0014FAAF /* WCSocketConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCSocketConnect.h; sourceTree = "<group>"; };
 		528D5B2F212AC6CB0014FAAF /* WCSocketConnect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCSocketConnect.m; sourceTree = "<group>"; };
-		528D5B31212BEC840014FAAF /* WCMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMainTableViewCell.h; sourceTree = "<group>"; };
-		528D5B32212BEC840014FAAF /* WCMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCMainTableViewCell.m; sourceTree = "<group>"; };
 		528D5B37212BF05F0014FAAF /* WCChatListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCChatListTableViewCell.h; sourceTree = "<group>"; };
 		528D5B38212BF05F0014FAAF /* WCChatListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCChatListTableViewCell.m; sourceTree = "<group>"; };
 		528D5B49212CF0A30014FAAF /* WCMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCMessageViewController.h; sourceTree = "<group>"; };
@@ -310,8 +307,6 @@
 		528D5B20212A8FC80014FAAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				528D5B31212BEC840014FAAF /* WCMainTableViewCell.h */,
-				528D5B32212BEC840014FAAF /* WCMainTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -717,7 +712,6 @@
 				528D5B30212AC6CB0014FAAF /* WCSocketConnect.m in Sources */,
 				528D5B4B212CF0A30014FAAF /* WCMessageViewController.m in Sources */,
 				528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */,
-				528D5B33212BEC840014FAAF /* WCMainTableViewCell.m in Sources */,
 				528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */,
 				528D5B0F212A6D370014FAAF /* WCTabBarController.m in Sources */,
 				528D5B5B212CF93E0014FAAF /* WCPhoneLoginViewController.m in Sources */,

@@ -7,17 +7,19 @@
 //
 
 #import "WCMainViewController.h"
-#import "WCMainTableViewCell.h"
-@interface WCMainViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "Utilities.h"
+@interface WCMainViewController ()
 
+@property(nonatomic,strong)UIScrollView *mainScrollView;
 
+@property(nonatomic,strong)UIScrollView *bottomScrollView;
 @end
 
 @implementation WCMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"";
+    self.navigationItem.title = @"首页";
     [self.navigationItem setHidesBackButton:YES];
     
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blueColor]];
@@ -30,38 +32,35 @@
 }
 #pragma mark 创建界面
 -(void)creatBasicView{
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    [self.view addSubview:tableView];
-}
-#pragma mark UITableViewDataSource和UITableViewDelegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 40;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    WCMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    self.mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.mainScrollView.backgroundColor = [UIColor  lightGrayColor];
+    self.mainScrollView.userInteractionEnabled = YES;
+    self.mainScrollView.showsVerticalScrollIndicator = YES;
+    self.mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT * 1.2);
+    [self.view addSubview:self.mainScrollView];
     
-    if(!cell){
-        cell = [[WCMainTableViewCell alloc] init];
+    for (NSUInteger i = 0; i < 12; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.tag = 10000 + i;
+        button.backgroundColor = [UIColor colorWithRed:((arc4random()%256)/255.0) green:((arc4random()%256)/255.0) blue:((arc4random()%256)/255.0) alpha:0.5];
+        button.frame = CGRectMake((i + 1 )%4 * SCREEN_WIDTH/4, i / 4 * SCREEN_WIDTH/4, SCREEN_WIDTH/4, SCREEN_WIDTH/4);
+        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.mainScrollView addSubview:button];
     }
-    
-    return cell;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSLog(@"点击了吗");
+    self.bottomScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, SCREEN_WIDTH*3/4, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_WIDTH*3/4)];
+    self.bottomScrollView.backgroundColor = [UIColor purpleColor];
+    self.bottomScrollView.userInteractionEnabled = YES;
+    self.bottomScrollView.showsVerticalScrollIndicator = YES;
+    self.bottomScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, (SCREEN_HEIGHT-SCREEN_WIDTH*3/4) *1.1);
+    [self.mainScrollView addSubview:self.bottomScrollView];
 }
 
+-(void)buttonAction:(UIButton *)sender{
+    
+    NSLog(@"%@",sender);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
