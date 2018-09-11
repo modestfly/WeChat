@@ -32,6 +32,9 @@
 		528D5B56212CF28D0014FAAF /* WCSearchFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B55212CF28D0014FAAF /* WCSearchFriendsViewController.m */; };
 		528D5B58212CF5130014FAAF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 528D5B57212CF5130014FAAF /* back.png */; };
 		528D5B5B212CF93E0014FAAF /* WCPhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528D5B5A212CF93E0014FAAF /* WCPhoneLoginViewController.m */; };
+		52E1B6FC2147BF0E000B0B11 /* IOS背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B6FB2147BF0E000B0B11 /* IOS背景图.png */; };
+		52E1B6FE2147C416000B0B11 /* 登录图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B6FD2147C416000B0B11 /* 登录图标.png */; };
+		52E1B7012147CB0A000B0B11 /* UIToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B7002147CB0A000B0B11 /* UIToastView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,10 @@
 		528D5B57212CF5130014FAAF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		528D5B59212CF93E0014FAAF /* WCPhoneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCPhoneLoginViewController.h; sourceTree = "<group>"; };
 		528D5B5A212CF93E0014FAAF /* WCPhoneLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCPhoneLoginViewController.m; sourceTree = "<group>"; };
+		52E1B6FB2147BF0E000B0B11 /* IOS背景图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IOS背景图.png"; sourceTree = "<group>"; };
+		52E1B6FD2147C416000B0B11 /* 登录图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录图标.png"; sourceTree = "<group>"; };
+		52E1B6FF2147CB0A000B0B11 /* UIToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIToastView.h; sourceTree = "<group>"; };
+		52E1B7002147CB0A000B0B11 /* UIToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIToastView.m; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +218,8 @@
 		521BF37821265D2A00D9F58A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B6FD2147C416000B0B11 /* 登录图标.png */,
+				52E1B6FB2147BF0E000B0B11 /* IOS背景图.png */,
 				528D5B57212CF5130014FAAF /* back.png */,
 				521BF3852126A69D00D9F58A /* 蓝色选框-圆角.png */,
 			);
@@ -223,6 +232,8 @@
 				528D5B2D212AC65B0014FAAF /* Socket */,
 				521BF3812126681D00D9F58A /* Utilities.h */,
 				521BF3822126681D00D9F58A /* Utilities.m */,
+				52E1B6FF2147CB0A000B0B11 /* UIToastView.h */,
+				52E1B7002147CB0A000B0B11 /* UIToastView.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -653,7 +664,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				521BF3482126563C00D9F58A /* Assets.xcassets in Resources */,
+				52E1B6FC2147BF0E000B0B11 /* IOS背景图.png in Resources */,
 				521BF3862126A69D00D9F58A /* 蓝色选框-圆角.png in Resources */,
+				52E1B6FE2147C416000B0B11 /* 登录图标.png in Resources */,
 				528D5B58212CF5130014FAAF /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +717,7 @@
 				521BF3832126681D00D9F58A /* Utilities.m in Sources */,
 				521BF372212656FA00D9F58A /* WCBaseViewController.m in Sources */,
 				521BF34E2126563C00D9F58A /* main.m in Sources */,
+				52E1B7012147CB0A000B0B11 /* UIToastView.m in Sources */,
 				528D5B1C212A8A6D0014FAAF /* WCTabBarNavigation.m in Sources */,
 				521BF3402126563A00D9F58A /* AppDelegate.m in Sources */,
 				528D5B12212A87DA0014FAAF /* WCMyDetailViewController.m in Sources */,

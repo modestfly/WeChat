@@ -14,14 +14,14 @@
 #import "WCQuestionViewController.h"
 #import "WCTabBarController.h"
 @interface WCLoginViewController ()<UITextFieldDelegate>
-
+@property (nonatomic,strong) UIView *backgroundImageView;//背景图片
 @end
 
 @implementation WCLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self createLoginView];
     // Do any additional setup after loading the view.
 }
@@ -36,21 +36,29 @@
 - (void)createLoginView
 {
     self.navigationItem.title = @"登录";
+    
+    //设置登陆页背景图片
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    backgroundImageView.image = [UIImage imageNamed:@"IOS背景图"];
+    [self.view addSubview:backgroundImageView];
+    backgroundImageView.userInteractionEnabled = YES;
+    self.backgroundImageView = backgroundImageView;
 
-    UIImageView *wechatImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(SCREEN_WIDTH/2-20, NAVANDSTATUSHEIGHT + 40, 40, 40))];
-    
+    UIImageView *wechatImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(SCREEN_WIDTH/2-25, NAVANDSTATUSHEIGHT + 40, 50, 50))];
     wechatImageView.backgroundColor = [UIColor purpleColor];
-    
-    [self.view addSubview: wechatImageView];
+    wechatImageView.image = [UIImage imageNamed:@"登录图标"];
+    wechatImageView.layer.masksToBounds = YES;
+    wechatImageView.layer.cornerRadius = 25;
+    [self.backgroundImageView addSubview: wechatImageView];
     //用户名
     self.userNameTextField = [[UITextField alloc]init];
-    self.userNameTextField.placeholder = @"请输入手机号码";
+    self.userNameTextField.placeholder = @"请输入用户名";
     self.userNameTextField.font=[UIFont systemFontOfSize:14];
     self.userNameTextField.delegate = self;
     self.userNameTextField.textColor=[Utilities colorWithHexString:@"#888888"];
     self.userNameTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    self.userNameTextField.keyboardType = UIKeyboardTypeNumberPad;
-    [self.view addSubview:self.userNameTextField];
+    self.userNameTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.backgroundImageView addSubview:self.userNameTextField];
     //密码
     self.passWordTextField = [[UITextField alloc]init];
     self.passWordTextField.placeholder = @"请输入密码";
@@ -58,7 +66,9 @@
     self.passWordTextField.delegate = self;
     self.passWordTextField.textColor=[Utilities colorWithHexString:@"#888888"];
     self.passWordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [self.view addSubview:self.passWordTextField];
+    self.passWordTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.passWordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.backgroundImageView addSubview:self.passWordTextField];
     //登录按钮
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
     loginButton.titleLabel.font=[UIFont systemFontOfSize:18];
@@ -67,7 +77,7 @@
     [loginButton setTitleColor:[Utilities colorWithHexString:@"#ffffff"] forState:UIControlStateNormal];
     [loginButton addTarget:self action:@selector(loginBtClick) forControlEvents:UIControlEventTouchUpInside];
     loginButton.userInteractionEnabled=YES;
-    [self.view addSubview:loginButton];
+    [self.backgroundImageView addSubview:loginButton];
     //忘记密码
 /*    UIButton *frogetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     frogetButton.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -126,7 +136,7 @@
     }];
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(wechatImageView);
-        make.top.equalTo(self.passWordTextField.mas_bottom).offset(10);
+        make.top.equalTo(self.passWordTextField.mas_bottom).offset(25);
         make.width.equalTo(self.userNameTextField);
         make.left.equalTo(self.userNameTextField);
         make.height.equalTo(self.userNameTextField);
@@ -188,12 +198,21 @@
 #pragma mark 进行登录的网络请求
 -(void)loginWithNameAndPassword{
     
-    NSString *usernameMD5 = [[self.userNameTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    //对用户名和密码进行校验
+    if ([self.userNameTextField.text isEqualToString:@""] || self.userNameTextField.text == nil) {
+        
+        
+    }
+    if ([self.passWordTextField.text isEqualToString:@""] || self.passWordTextField.text == nil) {
+        
+        
+    }
     
-    NSString *passwordMD5 = [[self.passWordTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
     
-     NSLog(@"usernameMD5:%@,passwordMD5:%@",usernameMD5,passwordMD5);
     
+//    NSString *usernameMD5 = [[self.userNameTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+//    NSString *passwordMD5 = [[self.passWordTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+//     NSLog(@"usernameMD5:%@,passwordMD5:%@",usernameMD5,passwordMD5);
 //    NSString *identify = [[UIDevice currentDevice] identifierForVendor].UUIDString;
 //    NSLog(@"唯一标识:%@",identify);
 //    NSString *bundleIdentify = [[NSBundle mainBundle]bundleIdentifier];
@@ -206,7 +225,7 @@
     NSString *headvalue = [NSString stringWithFormat:@"Basic %@",basic];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:1];
 
-    [parameters setObject:@"sa" forKey:@"username"];
+    [parameters setObject:@"xuemei.han" forKey:@"username"];
     [parameters setObject:@"111111" forKey:@"password"];
     [parameters setObject:@"password" forKey:@"grant_type"];
 
@@ -233,7 +252,7 @@
 //
 //        NSLog(@"不行");
 //    }];
-    NSLog(@"没打印：%@",session.requestSerializer.HTTPRequestHeaders);
+ //   NSLog(@"没打印：%@",session.requestSerializer.HTTPRequestHeaders);
     //YD应用列表接口测试
 //    NSString *urllist = @"http://10.20.100.3:8089/api-wuliu/waybill/list/1";
 //
@@ -241,24 +260,18 @@
 //    manage.responseSerializer = [AFHTTPResponseSerializer serializer];
 //    manage.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/plain",@"text/html",@"text/json",@"application/pdf",@"application/json",nil];
 //    manage.requestSerializer = [AFHTTPRequestSerializer serializer];
-//    [manage.requestSerializer setValue:@"Bearer laaaaaaq" forHTTPHeaderField:@"Authorization"];
+//    [manage.requestSerializer setValue:@"Bearer  eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzY2Nzc2NTUsInVzZXJfbmFtZSI6InNhIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9TQSJdLCJqdGkiOiIyNDVmNTg0Yi05YWIwLTQwOWYtYTdhOC1lM2Q4MjY2NGU0MDQiLCJjbGllbnRfaWQiOiJhY21lIiwic2NvcGUiOlsib3BlbmlkIl19.bvCbO2-F5MB8SwLZ50Osb-DNgYoRNUoUO-8vU1M9JDUZbuw6xxEu5f1ngqxSha3Nd2Zfa9DPtupEf5Id0rhNRwH8NAfwggzUDKdGylUHKGH6YjTGd3ESSr_4ifi2TQuLxMZvM4wj285a6RXWHJPTquzHZW4qpNHQRNgETLeSjGLHnr3Val8CwaZMhixudAb41Qt7cx7wPNilPXuXYD5OKUwIjgfFOV_OHQUpBHTiyLc2LNQXkRO-QcZvBr9ZKhGaJrSyDMb_mZNbxwtsekv9pA630vWiu2FidYFA7x9BdieDKcJT7x10rY1J5fg6nkdJfG0vdMvzwCVanwxIntW2vA" forHTTPHeaderField:@"Authorization"];
 //    manage.requestSerializer.timeoutInterval = 20.f;//超时时间
-//    //无条件的信任服务器上的证书
-//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
-//    // 客户端是否信任非法证书
-//    securityPolicy.allowInvalidCertificates = YES;
-//    // 是否在证书域字段中验证域名
-//    securityPolicy.validatesDomainName = NO;
-//    manage.securityPolicy = securityPolicy;
 //    [manage GET:urllist parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"成功");
+//             NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//             NSLog(@"请求成功 + %@", str);
 //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        NSLog(@"请求失败:%@",error);
 //    }];
-    
-    
-     
-  // [self goToMain];
+//
+//
+//     NSLog(@"没打印：%@",manage.requestSerializer.HTTPRequestHeaders);
+   //[self goToMain];
 }
 - (NSStringEncoding)responseStringEncoding:(NSURLSessionDataTask *)task{
     
