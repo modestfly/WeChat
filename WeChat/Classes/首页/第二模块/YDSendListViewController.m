@@ -12,11 +12,28 @@
 
 @end
 
+
 @implementation YDSendListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self creatBasicView];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark 创建界面
+-(void)creatBasicView{
+    //创建导航栏的左侧按钮
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 34, 16)];
+    [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
+    [button addTarget:self action:@selector(backForword) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = backButton;
+}
+-(void)backForword{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

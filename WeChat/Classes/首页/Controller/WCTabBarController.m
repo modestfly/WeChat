@@ -30,16 +30,16 @@
 -(void)addChildViewControllers{
     
     WCMainViewController *mainVC = [[WCMainViewController alloc]init];
-    [self setupChildViewController:mainVC title:@"首页" normalName:@"" selectedName:@""];
+    [self setupChildViewController:mainVC title:@"首页" normalName:@"工作台_4_5_0" selectedName:@"工作台-1_4_5_0"];
     
     WCSearchListViewController *searchVC = [[WCSearchListViewController alloc]init];
-    [self setupChildViewController:searchVC title:@"探索" normalName:@"" selectedName:@""];
+    [self setupChildViewController:searchVC title:@"探索" normalName:@"客户列表_4_5_0" selectedName:@"客户列表-1_4_5_0"];
     
     WCChatListViewController *chatVC = [[WCChatListViewController alloc]init];
-    [self setupChildViewController:chatVC title:@"消息" normalName:@"" selectedName:@""];
+    [self setupChildViewController:chatVC title:@"消息" normalName:@"消息_4_5_0" selectedName:@"消息-1_4_5_0"];
     
     WCMyDetailViewController *myDetailVC = [[WCMyDetailViewController alloc]init];
-    [self setupChildViewController:myDetailVC title:@"我的" normalName:@"" selectedName:@""];
+    [self setupChildViewController:myDetailVC title:@"我的" normalName:@"我的_4_5_0" selectedName:@"我的-1_4_5_0"];
     
     
     

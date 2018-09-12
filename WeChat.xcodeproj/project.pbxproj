@@ -38,6 +38,24 @@
 		52E1B7082148A778000B0B11 /* YDLoginDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B7072148A778000B0B11 /* YDLoginDataModel.m */; };
 		52E1B70B2148B1CE000B0B11 /* YDProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B70A2148B1CE000B0B11 /* YDProductListViewController.m */; };
 		52E1B70E2148B1F4000B0B11 /* YDSendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B70D2148B1F4000B0B11 /* YDSendListViewController.m */; };
+		52E1B7132148FA1B000B0B11 /* 工作台-1_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B70F2148FA1A000B0B11 /* 工作台-1_4_5_0@3x.png */; };
+		52E1B7142148FA1B000B0B11 /* 工作台_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7102148FA1B000B0B11 /* 工作台_4_5_0@3x.png */; };
+		52E1B7152148FA1B000B0B11 /* 工作台_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7112148FA1B000B0B11 /* 工作台_4_5_0@2x.png */; };
+		52E1B7162148FA1B000B0B11 /* 工作台-1_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7122148FA1B000B0B11 /* 工作台-1_4_5_0@2x.png */; };
+		52E1B71B2148FA6A000B0B11 /* 客户列表-1_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7172148FA69000B0B11 /* 客户列表-1_4_5_0@2x.png */; };
+		52E1B71C2148FA6A000B0B11 /* 客户列表-1_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7182148FA69000B0B11 /* 客户列表-1_4_5_0@3x.png */; };
+		52E1B71D2148FA6A000B0B11 /* 客户列表_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7192148FA6A000B0B11 /* 客户列表_4_5_0@2x.png */; };
+		52E1B71E2148FA6A000B0B11 /* 客户列表_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B71A2148FA6A000B0B11 /* 客户列表_4_5_0@3x.png */; };
+		52E1B7212148FAD0000B0B11 /* home_more_4_8_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B71F2148FAD0000B0B11 /* home_more_4_8_0@2x.png */; };
+		52E1B7222148FAD0000B0B11 /* home_more_4_8_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7202148FAD0000B0B11 /* home_more_4_8_0@3x.png */; };
+		52E1B7272148FAEA000B0B11 /* 我的_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7232148FAE9000B0B11 /* 我的_4_5_0@2x.png */; };
+		52E1B7282148FAEA000B0B11 /* 我的-1_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7242148FAE9000B0B11 /* 我的-1_4_5_0@3x.png */; };
+		52E1B7292148FAEA000B0B11 /* 我的-1_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7252148FAE9000B0B11 /* 我的-1_4_5_0@2x.png */; };
+		52E1B72A2148FAEA000B0B11 /* 我的_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B7262148FAE9000B0B11 /* 我的_4_5_0@3x.png */; };
+		52E1B72F2148FCE9000B0B11 /* 消息-1_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B72B2148FCE9000B0B11 /* 消息-1_4_5_0@2x.png */; };
+		52E1B7302148FCE9000B0B11 /* 消息_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B72C2148FCE9000B0B11 /* 消息_4_5_0@3x.png */; };
+		52E1B7312148FCE9000B0B11 /* 消息_4_5_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B72D2148FCE9000B0B11 /* 消息_4_5_0@2x.png */; };
+		52E1B7322148FCE9000B0B11 /* 消息-1_4_5_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B72E2148FCE9000B0B11 /* 消息-1_4_5_0@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +135,24 @@
 		52E1B70A2148B1CE000B0B11 /* YDProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDProductListViewController.m; sourceTree = "<group>"; };
 		52E1B70C2148B1F4000B0B11 /* YDSendListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDSendListViewController.h; sourceTree = "<group>"; };
 		52E1B70D2148B1F4000B0B11 /* YDSendListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDSendListViewController.m; sourceTree = "<group>"; };
+		52E1B70F2148FA1A000B0B11 /* 工作台-1_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "工作台-1_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B7102148FA1B000B0B11 /* 工作台_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "工作台_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B7112148FA1B000B0B11 /* 工作台_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "工作台_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B7122148FA1B000B0B11 /* 工作台-1_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "工作台-1_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B7172148FA69000B0B11 /* 客户列表-1_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户列表-1_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B7182148FA69000B0B11 /* 客户列表-1_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户列表-1_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B7192148FA6A000B0B11 /* 客户列表_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户列表_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B71A2148FA6A000B0B11 /* 客户列表_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客户列表_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B71F2148FAD0000B0B11 /* home_more_4_8_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_more_4_8_0@2x.png"; sourceTree = "<group>"; };
+		52E1B7202148FAD0000B0B11 /* home_more_4_8_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_more_4_8_0@3x.png"; sourceTree = "<group>"; };
+		52E1B7232148FAE9000B0B11 /* 我的_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B7242148FAE9000B0B11 /* 我的-1_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的-1_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B7252148FAE9000B0B11 /* 我的-1_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的-1_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B7262148FAE9000B0B11 /* 我的_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B72B2148FCE9000B0B11 /* 消息-1_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息-1_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B72C2148FCE9000B0B11 /* 消息_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息_4_5_0@3x.png"; sourceTree = "<group>"; };
+		52E1B72D2148FCE9000B0B11 /* 消息_4_5_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息_4_5_0@2x.png"; sourceTree = "<group>"; };
+		52E1B72E2148FCE9000B0B11 /* 消息-1_4_5_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息-1_4_5_0@3x.png"; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +263,24 @@
 		521BF37821265D2A00D9F58A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B72D2148FCE9000B0B11 /* 消息_4_5_0@2x.png */,
+				52E1B72C2148FCE9000B0B11 /* 消息_4_5_0@3x.png */,
+				52E1B72B2148FCE9000B0B11 /* 消息-1_4_5_0@2x.png */,
+				52E1B72E2148FCE9000B0B11 /* 消息-1_4_5_0@3x.png */,
+				52E1B7232148FAE9000B0B11 /* 我的_4_5_0@2x.png */,
+				52E1B7262148FAE9000B0B11 /* 我的_4_5_0@3x.png */,
+				52E1B7252148FAE9000B0B11 /* 我的-1_4_5_0@2x.png */,
+				52E1B7242148FAE9000B0B11 /* 我的-1_4_5_0@3x.png */,
+				52E1B71F2148FAD0000B0B11 /* home_more_4_8_0@2x.png */,
+				52E1B7202148FAD0000B0B11 /* home_more_4_8_0@3x.png */,
+				52E1B7192148FA6A000B0B11 /* 客户列表_4_5_0@2x.png */,
+				52E1B71A2148FA6A000B0B11 /* 客户列表_4_5_0@3x.png */,
+				52E1B7172148FA69000B0B11 /* 客户列表-1_4_5_0@2x.png */,
+				52E1B7182148FA69000B0B11 /* 客户列表-1_4_5_0@3x.png */,
+				52E1B7112148FA1B000B0B11 /* 工作台_4_5_0@2x.png */,
+				52E1B7102148FA1B000B0B11 /* 工作台_4_5_0@3x.png */,
+				52E1B7122148FA1B000B0B11 /* 工作台-1_4_5_0@2x.png */,
+				52E1B70F2148FA1A000B0B11 /* 工作台-1_4_5_0@3x.png */,
 				52E1B6FD2147C416000B0B11 /* 登录图标.png */,
 				52E1B6FB2147BF0E000B0B11 /* IOS背景图.png */,
 				528D5B57212CF5130014FAAF /* back.png */,
@@ -712,9 +766,27 @@
 			files = (
 				521BF3482126563C00D9F58A /* Assets.xcassets in Resources */,
 				52E1B6FC2147BF0E000B0B11 /* IOS背景图.png in Resources */,
+				52E1B7162148FA1B000B0B11 /* 工作台-1_4_5_0@2x.png in Resources */,
+				52E1B71C2148FA6A000B0B11 /* 客户列表-1_4_5_0@3x.png in Resources */,
+				52E1B7302148FCE9000B0B11 /* 消息_4_5_0@3x.png in Resources */,
+				52E1B72A2148FAEA000B0B11 /* 我的_4_5_0@3x.png in Resources */,
 				521BF3862126A69D00D9F58A /* 蓝色选框-圆角.png in Resources */,
+				52E1B7292148FAEA000B0B11 /* 我的-1_4_5_0@2x.png in Resources */,
+				52E1B71B2148FA6A000B0B11 /* 客户列表-1_4_5_0@2x.png in Resources */,
+				52E1B7132148FA1B000B0B11 /* 工作台-1_4_5_0@3x.png in Resources */,
+				52E1B72F2148FCE9000B0B11 /* 消息-1_4_5_0@2x.png in Resources */,
+				52E1B7272148FAEA000B0B11 /* 我的_4_5_0@2x.png in Resources */,
+				52E1B7152148FA1B000B0B11 /* 工作台_4_5_0@2x.png in Resources */,
+				52E1B71D2148FA6A000B0B11 /* 客户列表_4_5_0@2x.png in Resources */,
+				52E1B7212148FAD0000B0B11 /* home_more_4_8_0@2x.png in Resources */,
 				52E1B6FE2147C416000B0B11 /* 登录图标.png in Resources */,
+				52E1B7222148FAD0000B0B11 /* home_more_4_8_0@3x.png in Resources */,
+				52E1B7282148FAEA000B0B11 /* 我的-1_4_5_0@3x.png in Resources */,
+				52E1B7142148FA1B000B0B11 /* 工作台_4_5_0@3x.png in Resources */,
+				52E1B7322148FCE9000B0B11 /* 消息-1_4_5_0@3x.png in Resources */,
 				528D5B58212CF5130014FAAF /* back.png in Resources */,
+				52E1B71E2148FA6A000B0B11 /* 客户列表_4_5_0@3x.png in Resources */,
+				52E1B7312148FCE9000B0B11 /* 消息_4_5_0@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

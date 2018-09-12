@@ -34,6 +34,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self goToMain];
+}
 #pragma mark - 界面搭建
 #pragma mark 布局登录界面
 - (void)createLoginView
@@ -235,17 +242,38 @@
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
     session.responseSerializer = [AFHTTPResponseSerializer serializer];
     session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"text/plain",@"text/html",@"text/json",@"application/pdf",@"application/json",nil];
-
+    
     session.requestSerializer = [AFHTTPRequestSerializer serializer];
     [session.requestSerializer setValue:headvalue forHTTPHeaderField:@"Authorization"];
     session.requestSerializer.timeoutInterval = 20.f;//超时时间
 
     [session POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"请求成功 + %@", str);
-
+        
+        NSError *error = nil;
+        
+        if (![str isEqualToString:@""] && str != nil) {
+            
+            YDLoginDataModel *loginModel = [YDLoginDataModel shareYDLoginDataModel];
+            
+            loginModel = [[YDLoginDataModel alloc] initWithString:str error:&error];
+            
+            NSLog(@"请求成功 + %@",loginModel.access_token);
+            //将登录的信息保存在本地，然后跳转到主页面
+            [self saveLoginUserToLocal:loginModel];
+            //
+            [self goToMain];
+        }
+        else{
+            
+            [UIToastView showToastViewWithContent:@"未获取到登录人信息，请确认!" andTime:2.0 andObject:self];
+            
+            return ;
+        }
+    
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          NSLog(@"请求失败 + %@",error);
+        [UIToastView showToastViewWithContent:@"网络请求失败，请稍后重试"  andTime:2.0 andObject:self];
     }];
     
 //    [session GET:@"https://tieba.baidu.com/hottopic/browse/topicList" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -276,24 +304,23 @@
 //     NSLog(@"没打印：%@",manage.requestSerializer.HTTPRequestHeaders);
    //[self goToMain];
 }
-- (NSStringEncoding)responseStringEncoding:(NSURLSessionDataTask *)task{
-    
-    NSURLResponse *response =task.response;
-    if (response) {
-        NSStringEncoding stringEncoding = NSUTF8StringEncoding;
-        if (response.textEncodingName) {
-            CFStringEncoding IANAEncoding = CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)response.textEncodingName);
-            if (IANAEncoding != kCFStringEncodingInvalidId) {
-                stringEncoding = CFStringConvertEncodingToNSStringEncoding(IANAEncoding);
-            }
-        }
-        
-        return   stringEncoding;
-    }
-    
-    return NSUTF8StringEncoding;
-}
 
+
+-(void)saveLoginUserToLocal:(YDLoginDataModel *)model{
+    
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    [userDefaults setObject:model.access_token forKey:@"access_token"];
+    [userDefaults setObject:model.token_type forKey:@"token_type"];
+    [userDefaults setObject:model.refresh_token forKey:@"refresh_token"];
+    [userDefaults setObject:model.expires_in forKey:@"express_in"];
+    [userDefaults setObject:model.scope forKey:@"scope"];
+    [userDefaults setObject:model.jti forKey:@"jti"];
+    [userDefaults synchronize];
+    
+    
+}
 #pragma mark 跳转到主界面
 -(void)goToMain{
     

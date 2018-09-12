@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <JSONModel.h>
 //登录后接口的数据存储
-@interface YDLoginDataModel : NSObject
+@interface YDLoginDataModel : JSONModel
 
 @property(nonatomic,copy) NSString *access_token;
 
@@ -22,5 +22,7 @@
 @property(nonatomic,copy) NSString *scope;
 
 @property(nonatomic,copy) NSString *jti;
+
++(YDLoginDataModel *)shareYDLoginDataModel;
 
 @end
