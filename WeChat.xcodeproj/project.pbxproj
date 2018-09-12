@@ -35,6 +35,9 @@
 		52E1B6FC2147BF0E000B0B11 /* IOS背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B6FB2147BF0E000B0B11 /* IOS背景图.png */; };
 		52E1B6FE2147C416000B0B11 /* 登录图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E1B6FD2147C416000B0B11 /* 登录图标.png */; };
 		52E1B7012147CB0A000B0B11 /* UIToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B7002147CB0A000B0B11 /* UIToastView.m */; };
+		52E1B7082148A778000B0B11 /* YDLoginDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B7072148A778000B0B11 /* YDLoginDataModel.m */; };
+		52E1B70B2148B1CE000B0B11 /* YDProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B70A2148B1CE000B0B11 /* YDProductListViewController.m */; };
+		52E1B70E2148B1F4000B0B11 /* YDSendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E1B70D2148B1F4000B0B11 /* YDSendListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,12 @@
 		52E1B6FD2147C416000B0B11 /* 登录图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录图标.png"; sourceTree = "<group>"; };
 		52E1B6FF2147CB0A000B0B11 /* UIToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIToastView.h; sourceTree = "<group>"; };
 		52E1B7002147CB0A000B0B11 /* UIToastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIToastView.m; sourceTree = "<group>"; };
+		52E1B7062148A778000B0B11 /* YDLoginDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLoginDataModel.h; sourceTree = "<group>"; };
+		52E1B7072148A778000B0B11 /* YDLoginDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDLoginDataModel.m; sourceTree = "<group>"; };
+		52E1B7092148B1CE000B0B11 /* YDProductListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDProductListViewController.h; sourceTree = "<group>"; };
+		52E1B70A2148B1CE000B0B11 /* YDProductListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDProductListViewController.m; sourceTree = "<group>"; };
+		52E1B70C2148B1F4000B0B11 /* YDSendListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDSendListViewController.h; sourceTree = "<group>"; };
+		52E1B70D2148B1F4000B0B11 /* YDSendListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDSendListViewController.m; sourceTree = "<group>"; };
 		5652D0930EE601B79204C051 /* libPods-WeChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C7010340AD25DD54FDAC4B /* Pods-WeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeChat/Pods-WeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,11 +238,10 @@
 		521BF37921265D3E00D9F58A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B7022148A188000B0B11 /* UIToastView */,
 				528D5B2D212AC65B0014FAAF /* Socket */,
 				521BF3812126681D00D9F58A /* Utilities.h */,
 				521BF3822126681D00D9F58A /* Utilities.m */,
-				52E1B6FF2147CB0A000B0B11 /* UIToastView.h */,
-				52E1B7002147CB0A000B0B11 /* UIToastView.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -368,12 +376,9 @@
 		528D5B3B212C15400014FAAF /* 登录界面 */ = {
 			isa = PBXGroup;
 			children = (
-				521BF37B2126627D00D9F58A /* WCLoginViewController.h */,
-				521BF37C2126627D00D9F58A /* WCLoginViewController.m */,
-				521BF3872126B56400D9F58A /* WCFrogetPasswordViewController.h */,
-				521BF3882126B56400D9F58A /* WCFrogetPasswordViewController.m */,
-				521BF38A2126B57F00D9F58A /* WCQuestionViewController.h */,
-				521BF38B2126B57F00D9F58A /* WCQuestionViewController.m */,
+				52E1B7052148A4AE000B0B11 /* Model */,
+				52E1B7042148A4A3000B0B11 /* View */,
+				52E1B7032148A49A000B0B11 /* Controller */,
 			);
 			path = "登录界面";
 			sourceTree = "<group>";
@@ -524,6 +529,8 @@
 		52E1B6F62146344F000B0B11 /* 第一模块 */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B7092148B1CE000B0B11 /* YDProductListViewController.h */,
+				52E1B70A2148B1CE000B0B11 /* YDProductListViewController.m */,
 			);
 			path = "第一模块";
 			sourceTree = "<group>";
@@ -531,6 +538,8 @@
 		52E1B6F721463470000B0B11 /* 第二模块 */ = {
 			isa = PBXGroup;
 			children = (
+				52E1B70C2148B1F4000B0B11 /* YDSendListViewController.h */,
+				52E1B70D2148B1F4000B0B11 /* YDSendListViewController.m */,
 			);
 			path = "第二模块";
 			sourceTree = "<group>";
@@ -540,6 +549,44 @@
 			children = (
 			);
 			path = "第三模块";
+			sourceTree = "<group>";
+		};
+		52E1B7022148A188000B0B11 /* UIToastView */ = {
+			isa = PBXGroup;
+			children = (
+				52E1B6FF2147CB0A000B0B11 /* UIToastView.h */,
+				52E1B7002147CB0A000B0B11 /* UIToastView.m */,
+			);
+			path = UIToastView;
+			sourceTree = "<group>";
+		};
+		52E1B7032148A49A000B0B11 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521BF37B2126627D00D9F58A /* WCLoginViewController.h */,
+				521BF37C2126627D00D9F58A /* WCLoginViewController.m */,
+				521BF3872126B56400D9F58A /* WCFrogetPasswordViewController.h */,
+				521BF3882126B56400D9F58A /* WCFrogetPasswordViewController.m */,
+				521BF38A2126B57F00D9F58A /* WCQuestionViewController.h */,
+				521BF38B2126B57F00D9F58A /* WCQuestionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52E1B7042148A4A3000B0B11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52E1B7052148A4AE000B0B11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52E1B7062148A778000B0B11 /* YDLoginDataModel.h */,
+				52E1B7072148A778000B0B11 /* YDLoginDataModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CB07FB23E5E8B641C6ACE4B5 /* Pods */ = {
@@ -724,6 +771,8 @@
 				528D5B56212CF28D0014FAAF /* WCSearchFriendsViewController.m in Sources */,
 				528D5B4E212CF0D70014FAAF /* WCMessageTableViewCell.m in Sources */,
 				528D5B30212AC6CB0014FAAF /* WCSocketConnect.m in Sources */,
+				52E1B70B2148B1CE000B0B11 /* YDProductListViewController.m in Sources */,
+				52E1B70E2148B1F4000B0B11 /* YDSendListViewController.m in Sources */,
 				528D5B4B212CF0A30014FAAF /* WCMessageViewController.m in Sources */,
 				528D5B2C212A98770014FAAF /* WCMainViewController.m in Sources */,
 				528D5B15212A87F60014FAAF /* WCChatListViewController.m in Sources */,
@@ -731,6 +780,7 @@
 				528D5B5B212CF93E0014FAAF /* WCPhoneLoginViewController.m in Sources */,
 				521BF38C2126B57F00D9F58A /* WCQuestionViewController.m in Sources */,
 				528D5B39212BF05F0014FAAF /* WCChatListTableViewCell.m in Sources */,
+				52E1B7082148A778000B0B11 /* YDLoginDataModel.m in Sources */,
 				528D5B19212A88220014FAAF /* WCSearchListViewController.m in Sources */,
 				521BF37D2126627D00D9F58A /* WCLoginViewController.m in Sources */,
 			);

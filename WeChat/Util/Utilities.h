@@ -14,8 +14,13 @@
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 //导航栏+状态栏的高度
 #define NAVANDSTATUSHEIGHT self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height
+
+//导航栏高度self.navigationController.navigationBar.frame.size.height
+#define NAVIGATIONBAR_HEIGHT self.navigationController.navigationBar.frame.size.height
 //toast位置
-#define KTOASTLA CGRectMake((SCREEN_WIDTH - 200)/2.0, SCREEN_HEIGHT/2-50-NAVIGATIONBAR_HEIGHT, 200, 50)
+#define KTOASTLA CGRectMake((SCREEN_WIDTH - 200)/2.0, SCREEN_HEIGHT/2-50-44, 200, 50)
+
+
 //定义个颜色，按色度来进行定义
 #define SF_COLOR(RED, GREEN, BLUE, ALPHA)    [UIColor colorWithRed:RED green:GREEN blue:BLUE alpha:ALPHA]
 //定义操作系统的版本

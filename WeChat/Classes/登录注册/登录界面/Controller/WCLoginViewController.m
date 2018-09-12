@@ -10,6 +10,9 @@
 #import "Utilities.h"
 #import <Masonry.h>
 #import <AFNetworking.h>
+
+#import "UIToastView.h"
+#import "YDLoginDataModel.h"
 #import "WCFrogetPasswordViewController.h"
 #import "WCQuestionViewController.h"
 #import "WCTabBarController.h"
@@ -200,16 +203,15 @@
     
     //对用户名和密码进行校验
     if ([self.userNameTextField.text isEqualToString:@""] || self.userNameTextField.text == nil) {
-        
-        
+       
+        [UIToastView showToastViewWithContent:@"用户名不能为空,请重新填写!"  andTime:2.0 andObject:self];
+        return;
     }
     if ([self.passWordTextField.text isEqualToString:@""] || self.passWordTextField.text == nil) {
         
-        
+        [UIToastView showToastViewWithContent:@"密码不能为空,请重新填写!"  andTime:2.0 andObject:self];
+        return;
     }
-    
-    
-    
 //    NSString *usernameMD5 = [[self.userNameTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
 //    NSString *passwordMD5 = [[self.passWordTextField.text dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
 //     NSLog(@"usernameMD5:%@,passwordMD5:%@",usernameMD5,passwordMD5);
@@ -225,6 +227,7 @@
     NSString *headvalue = [NSString stringWithFormat:@"Basic %@",basic];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:1];
 
+    //测试账号和密码请用xuemei.han 111111
     [parameters setObject:@"xuemei.han" forKey:@"username"];
     [parameters setObject:@"111111" forKey:@"password"];
     [parameters setObject:@"password" forKey:@"grant_type"];
