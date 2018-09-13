@@ -7,8 +7,8 @@
 //
 
 #import "YDProductListViewController.h"
-
-@interface YDProductListViewController ()
+#import "YDProductTableViewCell.h"
+@interface YDProductListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -18,6 +18,7 @@
 
     [super viewDidLoad];
     [self creatBasicView];
+    self.navigationItem.title = @"商品列表";
     // Do any additional setup after loading the view.
 }
 
@@ -31,6 +32,37 @@
     [button addTarget:self action:@selector(backForword) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    [self.view addSubview:tableView];
+}
+#pragma mark UITableViewDataSource和UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 40;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    YDProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if(!cell){
+        cell = [[YDProductTableViewCell alloc] init];
+    }
+    
+    return cell;
+    
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"点击了吗");
 }
 -(void)backForword{
     [self.navigationController popViewControllerAnimated:YES];

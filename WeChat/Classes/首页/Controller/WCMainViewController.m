@@ -42,24 +42,40 @@
 #pragma mark 创建界面
 -(void)creatBasicView{
     
-
     self.mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    self.mainScrollView.backgroundColor = [UIColor  lightGrayColor];
+    self.mainScrollView.backgroundColor = [UIColor  whiteColor];
     self.mainScrollView.userInteractionEnabled = YES;
     self.mainScrollView.showsVerticalScrollIndicator = YES;
     self.mainScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT * 1.2);
     [self.view addSubview:self.mainScrollView];
     
+    NSArray *labelArray = [[NSArray alloc]initWithObjects:@"信息刷新",@"未读信息",@"查看",@"测试",@"兑换券",@"交通查询",@"办公服务",@"快递",@"打印",@"通讯录",@"日记本",@"订阅", nil];
+    
+    NSArray *imageArray = [[NSArray alloc]initWithObjects:@"展示刷新",@"消息盒子",@"我的应标",@"客源兑换",@"派单管理",@"签约审核",@"实时工地",@"抢客户",@"客户预约",@"工人认证",@"工地管理",@"案例管理", nil];
+    
+    
     for (NSUInteger i = 0; i < 12; i++) {
+        
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = 10000 + i;
-        button.backgroundColor = [UIColor colorWithRed:((arc4random()%256)/255.0) green:((arc4random()%256)/255.0) blue:((arc4random()%256)/255.0) alpha:0.5];
         button.frame = CGRectMake((i + 1 )%4 * SCREEN_WIDTH/4, i / 4 * SCREEN_WIDTH/4-22, SCREEN_WIDTH/4, SCREEN_WIDTH/4);
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.mainScrollView addSubview:button];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/8 -17, SCREEN_WIDTH/8 -17, 34, 34)];
+        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageArray[i]]];
+        [button addSubview:imageView];
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, SCREEN_WIDTH/4 -22, SCREEN_WIDTH/4, 20)];
+        label.font = [UIFont systemFontOfSize:12];
+        label.textColor = [UIColor lightGrayColor];
+        label.text = [NSString stringWithFormat:@"%@",labelArray[i]];
+        label.textAlignment = NSTextAlignmentCenter;
+        [button addSubview:label];
+        
     }
     self.bottomScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, SCREEN_WIDTH*3/4-22, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_WIDTH*3/4)];
-    self.bottomScrollView.backgroundColor = [UIColor purpleColor];
+    self.bottomScrollView.backgroundColor = [UIColor lightGrayColor];
     self.bottomScrollView.userInteractionEnabled = YES;
     self.bottomScrollView.showsVerticalScrollIndicator = YES;
     self.bottomScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, (SCREEN_HEIGHT-SCREEN_WIDTH*3/4) *1.1);
@@ -67,8 +83,6 @@
 }
 
 -(void)buttonAction:(UIButton *)sender{
-    
-    NSLog(@"%ld",sender.tag);
     //跳转界面
     if (sender.tag == 10003) {
         YDProductListViewController *productVC = [[YDProductListViewController alloc] init];
